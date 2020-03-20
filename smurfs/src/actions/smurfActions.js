@@ -16,6 +16,7 @@ export const getData = () => dispatch => {
 };
 
 export const postData = data => dispatch => {
+  dispatch({ type: POST_DATA });
   axios.post("http://localhost:3333/smurfs", data).then(result => {
     console.log("post.data:", result);
     console.log("post.data:", result.data);

@@ -1,6 +1,6 @@
 //* ACTION IMPORTS *//
 
-import { GET_DATA } from "../actions/smurfActions";
+import { GET_DATA, POST_DATA } from "../actions/smurfActions";
 
 //* REDUCER INITIAL STATE *//
 export const initialState = {
@@ -15,6 +15,10 @@ export const smurfReducer = (state = initialState, action) => {
       return {
         ...state,
         smurfs: action.payload
+      };
+    case POST_DATA:
+      return {
+        ...state
       };
     default:
       return state;

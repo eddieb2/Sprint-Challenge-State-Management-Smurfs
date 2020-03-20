@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react";
-import Smurf from "./smurf";
+import React, { useEffect } from "react";
+import Smurf from "./Smurf";
 import { connect } from "react-redux";
 import { Button } from "@material-ui/core";
 import { getData } from "../actions/smurfActions";
-import smurfForm from "./smurfForm";
 
-const smurfList = props => {
-  const clickHandler = e => {
+const SmurfList = props => {
+  // //! First Way
+  // const clickHandler = e => {
+  //   props.getData();
+  // };
+
+  //! Second Way
+  useEffect(() => {
     props.getData();
-  };
+  }, [props.smurfs]);
 
   return (
     <div>
@@ -23,7 +28,7 @@ const smurfList = props => {
       <Button
         variant="contained"
         color="primary"
-        onClick={clickHandler}
+        // onClick={clickHandler}
       >
         Get Village
       </Button>
@@ -37,4 +42,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getData })(smurfList);
+export default connect(mapStateToProps, { getData })(SmurfList);

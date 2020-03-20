@@ -12,12 +12,12 @@ const smurfList = props => {
 
   return (
     <div>
+      <h1>Smurf Village:</h1>
       {props.smurfs.map(smurf => (
         <Smurf
           name={smurf.name}
           height={smurf.height}
           age={smurf.age}
-          key={Date.now()}
         />
       ))}
       <Button

@@ -3,8 +3,7 @@ import React from "react";
 const Smurf = props => {
   console.log("props", props);
   return (
-    <div>
-      <h1>Smurf Village:</h1>
+    <div key={Date.now()}>
       <ul>
         <li>{props.name}</li>
         <li>{props.age}</li>

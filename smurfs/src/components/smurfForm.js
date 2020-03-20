@@ -10,12 +10,10 @@ const SmurfsForm = props => {
     height: ""
   });
 
-  //handle changes
   const handleChange = e => {
     setNewSmurf({ ...newSmurf, [e.target.name]: e.target.value });
   };
 
-  //handle submit
   const handleSubmit = event => {
     event.preventDefault();
     props.postData(newSmurf);
